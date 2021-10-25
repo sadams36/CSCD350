@@ -1,5 +1,5 @@
 package cs350f21task3;
-
+//IGNORE toString() 
 public class Aircraft {
 
 	private String id;
@@ -19,11 +19,6 @@ public class Aircraft {
 	public State getState()
 	{
 		return null;
-	}
-	
-	public String toString()
-	{
-		return "";
 	}
 	
 	public void update()
