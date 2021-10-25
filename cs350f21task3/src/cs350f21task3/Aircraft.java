@@ -13,17 +13,17 @@ public class Aircraft {
 	
 	public String getID()
 	{
-		return "";
+		return this.id;
 	}
 	
 	public State getState()
 	{
-		return null;
+		return this.state;
 	}
 	
 	public void update()
 	{
-		
+		System.out.println("State of Airplane: " + this.state);
 	}
 	
 }
