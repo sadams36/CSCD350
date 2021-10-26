@@ -19,7 +19,7 @@ public class State {
 	
 	public double getAcceleration()
 	{
-		
+		return this.accelerationHorizontal;
 	}
 	
 	public double getHeading()
