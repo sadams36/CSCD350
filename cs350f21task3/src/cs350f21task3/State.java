@@ -3,16 +3,23 @@ package cs350f21task3;
 public class State {
 
 	private double x,y,z,heading,speedHorizontal,speedVertical,accelerationHorizontal,turnRate;
-	public State(double x, double y, double z, double heading, 
-			     double speedHorizontal, double speedVertical, 
-			     double accelerationHorizontal, double turnRate)
+	
+	public State(double x, double y, double z, double heading, double speedHorizontal, 
+			     double speedVertical, double accelerationHorizontal, double turnRate)
 	{
-		
+		this.x = x;
+		this.y = y;
+		this.z = z;
+		this.heading = heading;
+		this.speedHorizontal = speedHorizontal;
+		this.speedVertical = speedVertical;
+		this.accelerationHorizontal = accelerationHorizontal;
+		this.turnRate = turnRate;
 	}
 	
 	public double getAcceleration()
 	{
-		return 0;
+		
 	}
 	
 	public double getHeading()
