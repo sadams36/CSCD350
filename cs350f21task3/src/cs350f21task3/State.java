@@ -91,10 +91,10 @@ public class State {
 	public void setHeadingTarget(double heading, boolean direction)
 	{
 		this.heading = heading;
-		this.dire
+
 	}
 	
-	public void update()
+	public void update()// there is no wind in this method INGORE
 	{
 		
 	}
