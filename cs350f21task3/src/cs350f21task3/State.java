@@ -70,7 +70,7 @@ public class State {
 	
 	public double getTurnRate()
 	{
-		return 0;
+		return this.turnRate;
 	}
 	
 	public double getX()
