@@ -1,9 +1,11 @@
 package cs350f21task3;
 //ignore toString()
 public class State {
-
+      
+	//variable that are brought in from the constructor
 	private double x,y,z,heading,speedHorizontal,speedVertical,accelerationHorizontal,turnRate;
-	
+
+	private double headingTarget;
 	public State(double x, double y, double z, double heading, double speedHorizontal, 
 			     double speedVertical, double accelerationHorizontal, double turnRate)
 	{
@@ -24,10 +26,10 @@ public class State {
 	
 	public double getHeading()
 	{
-		return 0;
+		return this.heading;
 	}
 	
-	public double getHeadingTarget()
+	public double getHeadingTarget() 
 	{
 		return 0;
 	}
@@ -39,7 +41,7 @@ public class State {
 	
 	public double getSpeedHorizontal()
 	{
-		return 0;
+		return this.speedHorizontal;
 	}
 	
 	public double getSpeedHorizontalTarget()
@@ -53,7 +55,7 @@ public class State {
 	
 	public double getSpeedVertical()
 	{
-		return 0;
+		return this.speedVertical;
 	}
 	
 	public void setSpeedVertical(double speed)
@@ -73,22 +75,23 @@ public class State {
 	
 	public double getX()
 	{
-		return 0;
+		return this.x;
 	}
 	
 	public double getY()
 	{
-		return 0;
+		return this.y;
 	}
 	
 	public double getZ()
 	{
-		return 0;
+		return this.z;
 	}
 	
 	public void setHeadingTarget(double heading, boolean direction)
 	{
-		
+		this.heading = heading;
+		this.dire
 	}
 	
 	public void update()
