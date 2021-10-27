@@ -23,7 +23,7 @@ public class Aircraft {
 	
 	public void update()
 	{
-		System.out.println("State of Airplane: " + this.state);
+		this.state.update();
 	}
 	
 }
