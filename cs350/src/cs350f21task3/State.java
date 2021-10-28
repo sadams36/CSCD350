@@ -78,7 +78,7 @@ public class State {
 	
 	public double getY()
 	{
-		return 0;
+		return this.y;
 	}
 	
 	public double getZ()
