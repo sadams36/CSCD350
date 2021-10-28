@@ -22,7 +22,7 @@ public class Aircraft {
 		return this.state;
 	}
 	
-	public void update()
+	public void update()//from state
 	{
 		this.state.update();
 	}
