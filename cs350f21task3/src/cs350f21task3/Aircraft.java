@@ -1,4 +1,5 @@
 package cs350f21task3;
+
 //IGNORE toString() 
 public class Aircraft {
 
@@ -25,5 +26,4 @@ public class Aircraft {
 	{
 		this.state.update();
 	}
-	
 }

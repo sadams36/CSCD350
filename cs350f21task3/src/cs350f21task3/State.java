@@ -1,4 +1,5 @@
 package cs350f21task3;
+
 //ignore toString()
 public class State {
       
