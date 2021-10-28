@@ -6,7 +6,7 @@ public class State {
 	//variable that are brought in from the constructor
 	private double x,y,z,heading,speedHorizontal,speedVertical,accelerationHorizontal,turnRate;
 
-	private double headingTarget;
+
 	public State(double x, double y, double z, double heading, double speedHorizontal, 
 			     double speedVertical, double accelerationHorizontal, double turnRate)
 	{
@@ -50,8 +50,9 @@ public class State {
 		return 0;
 	}
 	
-	public void setSpeedHorizontalTarget(double speed)
+	public void setSpeedHorizontalTarget(double speed)//couple of lines
 	{
+		
 	}
 	
 	public double getSpeedVertical()
@@ -59,7 +60,7 @@ public class State {
 		return this.speedVertical;
 	}
 	
-	public void setSpeedVertical(double speed)
+	public void setSpeedVertical(double speed)//couple of lines
 	{
 		
 	}
@@ -89,7 +90,7 @@ public class State {
 		return this.z;
 	}
 	
-	public void setHeadingTarget(double heading, boolean direction)
+	public void setHeadingTarget(double heading, boolean direction)//definetly couple of lines
 	{
 		this.heading = heading;
 
