@@ -4,9 +4,12 @@ package cs350f21task3;
 public class State {
       
 	//variable that are brought in from the constructor
-	private double x,y,z,heading,speedHorizontal,speedVertical,accelerationHorizontal,turnRate;
+	private double x,y,z,
+				   heading,
+				   speedHorizontal,speedVertical,
+				   accelerationHorizontal,turnRate;
 
-
+	private double horizontalTarget;
 	public State(double x, double y, double z, double heading, double speedHorizontal, 
 			     double speedVertical, double accelerationHorizontal, double turnRate)
 	{
@@ -45,14 +48,14 @@ public class State {
 		return this.speedHorizontal;
 	}
 	
-	public double getSpeedHorizontalTarget()
+	public double getSpeedHorizontalTarget() //revise
 	{
-		return 0;
+		return this.horizontalTarget;
 	}
 	
-	public void setSpeedHorizontalTarget(double speed)//couple of lines
+	public void setSpeedHorizontalTarget(double speed)//revise
 	{
-		
+		this.horizontalTarget = speed;
 	}
 	
 	public double getSpeedVertical()
