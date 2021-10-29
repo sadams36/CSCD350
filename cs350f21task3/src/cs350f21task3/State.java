@@ -20,7 +20,7 @@ public class State {
 		this.turnRate = turnRate;
 	}
 	
-	public double getAcceleration()
+	public double getAccelerationHoizontal()
 	{
 		return this.accelerationHorizontal;
 	}
@@ -62,7 +62,7 @@ public class State {
 	
 	public void setSpeedVertical(double speed)//couple of lines
 	{
-		
+		this.speedVertical = speed; 
 	}
 	
 	public String getStateCSV()
