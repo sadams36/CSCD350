@@ -8,8 +8,10 @@ public class State {
 				   heading,
 				   speedHorizontal,speedVertical,
 				   accelerationHorizontal,turnRate;
-
-	private double horizontalTarget;
+	//private variables made in class
+	private double horizontalTarget,headingTarget;
+	private boolean direction;
+	
 	public State(double x, double y, double z, double heading, double speedHorizontal, 
 			     double speedVertical, double accelerationHorizontal, double turnRate)
 	{
@@ -33,14 +35,14 @@ public class State {
 		return this.heading;
 	}
 	
-	public double getHeadingTarget() 
+	public double getHeadingTarget() //revise
 	{
-		return 0;
+		return this.headingTarget;
 	}
 	
-	public double getHeadingTargetDirection()
+	public boolean getHeadingTargetDirection() //revise
 	{
-		return 0;
+		return this.direction;
 	}
 	
 	public double getSpeedHorizontal()
@@ -53,7 +55,7 @@ public class State {
 		return this.horizontalTarget;
 	}
 	
-	public void setSpeedHorizontalTarget(double speed)//revise
+	public void setSpeedHorizontalTarget(final double speed)//revise
 	{
 		this.horizontalTarget = speed;
 	}
@@ -63,7 +65,7 @@ public class State {
 		return this.speedVertical;
 	}
 	
-	public void setSpeedVertical(double speed)//couple of lines
+	public void setSpeedVertical(final double speed)//couple of lines
 	{
 		this.speedVertical = speed; 
 	}
@@ -93,10 +95,10 @@ public class State {
 		return this.z;
 	}
 	
-	public void setHeadingTarget(double heading, boolean direction)//definetly couple of lines
+	public void setHeadingTarget(final double heading, final boolean direction)//definetly couple of lines
 	{
-		this.heading = heading;
-
+		this.heading = heading;	
+		this.direction = direction;
 	}
 	
 	public void update()// there is no wind in this method INGORE
