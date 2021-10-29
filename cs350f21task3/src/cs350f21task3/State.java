@@ -72,7 +72,7 @@ public class State {
 	
 	public String getStateCSV()
 	{
-		return "";
+		return "" ;
 	}
 	
 	public double getTurnRate()
