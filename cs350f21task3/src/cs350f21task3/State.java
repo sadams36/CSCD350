@@ -70,9 +70,10 @@ public class State {
 		this.speedVertical = speed; 
 	}
 	
-	public String getStateCSV()
+	// return in  x,y,z,heading,hSpeed, vSpeed
+	public String getStateCSV() 
 	{
-		return "" ;
+		return this.x + "," + this.y + "," + this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
 	}
 	
 	public double getTurnRate()
@@ -95,14 +96,21 @@ public class State {
 		return this.z;
 	}
 	
-	public void setHeadingTarget(final double heading, final boolean direction)//definetly couple of lines
+	public void setHeadingTarget(final double heading, final boolean direction)//about 2 lines
 	{
-		this.heading = heading;	
+		this.headingTarget = heading;	
 		this.direction = direction;
 	}
 	
-	public void update()// there is no wind in this method INGORE
+	// there is no wind in this method INGORE
+	//speed vertical and horizontal
+	//heading
+	//positioning  x,y,z
+	public void update()// about 13 lines
 	{
+		
+		this.x += Math.sin(Math.toRadians(this.heading)) * this.speedHorizontal; //update last
+		this.y += Math.cos(Math.toRadians(this.heading)) * this.speedHorizontal;
 		
 	}
 }
