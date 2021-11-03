@@ -1,5 +1,5 @@
 package cs350f21task3;
-
+//Name: Samuel Urcino-Martinez
 //IGNORE toString() 
 public class Aircraft {
 

@@ -25,7 +25,7 @@ public class State {
 		this.turnRate = turnRate;
 	}
 	
-	public double getAccelerationHoizontal()
+	public double getAccelerationHorizontal()
 	{
 		return this.accelerationHorizontal;
 	}
@@ -40,7 +40,7 @@ public class State {
 		return this.headingTarget;
 	}
 	
-	public boolean getHeadingTargetDirection() //revise
+	public boolean getHeadingTargetDirection()//revise
 	{
 		return this.direction;
 	}
@@ -55,7 +55,7 @@ public class State {
 		return this.horizontalTarget;
 	}
 	
-	public void setSpeedHorizontalTarget(final double speed)//revise
+	public void setSpeedHorizontalTarget​(final double speed)//revise
 	{
 		this.horizontalTarget = speed;
 	}
@@ -106,17 +106,68 @@ public class State {
 	//speed vertical and horizontal
 	//heading
 	//positioning  x,y,z
-	public void update()// about 13 lines
+	public void update()// about 13 actual lines
 	{
-		if(this.direction) // turning clockwise
-		 this.heading += this.turnRate;
-		else               // turning counter clockwise
-		 this.heading -= this.turnRate;
+//========================================================================================================================================================
+		//TURNING THE HEADING
+		if(this.direction) // turning clockwise add 
+		{ 
+			 if(this.headingTarget > this.heading) 
+	            {
+	                if((this.heading + this.turnRate) > this.headingTarget) // the heading exceeds the target after adding 
+	                    this.heading = this.headingTarget;                  // we set the heading to the target since it exceeded it
+	                else
+	                    this.heading += this.turnRate;                      // otherwise add like normal
+
+		         }
+	            else //if(this.headingTarget < this.heading)                  // the heading is larger than the target; target has been exceeded
+	            {
+	                    if(this.heading > 360)                              // the heading is larger than 360 we are going to have to set it back between 0 and 360
+	                    {
+	                        this.heading = this.heading - 360;          // the new heading will be set by subtracting 360. this will give us the left over amount             
+	                    }
+	            }
+	    }// END CLOCKWISE CONDITION
+	        else//turning counter clockwise subtract
+	        {
+	            if(this.headingTarget < this.heading)                             // Target < Heading
+	            {
+	                if((this.heading - this.turnRate) < this.headingTarget)  // Heading - Turnrate < Target meaning we exceeded the target
+	                    this.heading = this.headingTarget;                   // the heading will be equal to the target
+	                else
+	                    this.heading -= this.turnRate;                       // otherwise subtract like normal
+	            }
+	        else //(this.headingTarget > this.heading)
+	            {
+	                this.heading -= this.turnRate;                           
+	                if(this.heading < 0)                                     // heading has passed 0 and gone negative so we need to reset
+	                {
+	                    this.heading = (this.heading + 360);                          
+	                }
+	            }		       
+	          }
+//================================================================================================================================================================
+		//HORIZONTAL SPEED LIMITS
+		if(this.speedHorizontal < this.horizontalTarget)//Speeding up
+        {
+            if(this.speedHorizontal + this.accelerationHorizontal >= this.horizontalTarget) // Check if the speed exceeds the target
+                this.speedHorizontal = this.horizontalTarget;                               // set equal 
+            else
+                this.speedHorizontal += this.accelerationHorizontal;
+        }
+    else if(this.speedHorizontal > this.horizontalTarget)//Slowing down
+        {
+                if(this.speedHorizontal + (this.accelerationHorizontal * -1) <= this.horizontalTarget) // Check if the speed exceeds the target
+                    this.speedHorizontal = this.horizontalTarget;									   // set equal 
+                else
+                    this.speedHorizontal -= this.accelerationHorizontal;                              // otherwise procees as normal
+        }
 		
-		this.speedHorizontal += this.accelerationHorizontal;
+	
 		this.z += this.speedVertical;
 		this.x += Math.sin(Math.toRadians(this.heading)) * this.speedHorizontal; //update last
 		this.y += Math.cos(Math.toRadians(this.heading)) * this.speedHorizontal;
 		
 	}
-}
+ }
+
