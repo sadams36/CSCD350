@@ -1,5 +1,5 @@
 package cs350f21task3;
-
+// Name: Samuel Urcino-Martinez
 //ignore toString()
 public class State {
       
@@ -108,9 +108,13 @@ public class State {
 	//positioning  x,y,z
 	public void update()// about 13 lines
 	{
-		this.z += this.speedVertical;
-		this.heading += this.turnRate;
+		if(this.direction) // turning clockwise
+		 this.heading += this.turnRate;
+		else               // turning counter clockwise
+		 this.heading -= this.turnRate;
+		
 		this.speedHorizontal += this.accelerationHorizontal;
+		this.z += this.speedVertical;
 		this.x += Math.sin(Math.toRadians(this.heading)) * this.speedHorizontal; //update last
 		this.y += Math.cos(Math.toRadians(this.heading)) * this.speedHorizontal;
 		
