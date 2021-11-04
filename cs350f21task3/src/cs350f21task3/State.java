@@ -25,68 +25,68 @@ public class State {
 		this.turnRate = turnRate;
 	}
 	
-	public double getAccelerationHorizontal()
+	public double getAccelerationHorizontal() //1
 	{
 		return this.accelerationHorizontal;
 	}
 	
-	public double getHeading()
+	public double getHeading() // 2
 	{
 		return this.heading;
 	}
 	
-	public double getHeadingTarget() //revise
+	public double getHeadingTarget() //3
 	{
 		return this.headingTarget;
 	}
 	
-	public boolean getHeadingTargetDirection()//revise
+	public boolean getHeadingTargetDirection()//4
 	{
 		return this.direction;
 	}
 	
-	public double getSpeedHorizontal()
+	public double getSpeedHorizontal() // 5
 	{
 		return this.speedHorizontal;
 	}
 	
-	public double getSpeedHorizontalTarget() //revise
+	public double getSpeedHorizontalTarget() //6
 	{
 		return this.horizontalTarget;
 	}
 	
-	public void setSpeedHorizontalTarget​(final double speed)//revise
+	public void setSpeedHorizontalTarget​(final double speed)//7
 	{
 		this.horizontalTarget = speed;
 	}
 	
-	public double getSpeedVertical()
+	public double getSpeedVertical() //8
 	{
 		return this.speedVertical;
 	}
 	
-	public void setSpeedVertical(final double speed)//couple of lines
+	public void setSpeedVertical(final double speed)//9
 	{
 		this.speedVertical = speed; 
 	}
 	
 	// return in  x,y,z,heading,hSpeed, vSpeed
-	public String getStateCSV() 
+	public String getStateCSV() // 10 
 	{
-		return this.x + "," + this.y + "," + this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
+		return this.x + "," + this.y + "," + this.z + " " + this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
 	}
 	
-	public double getTurnRate()
+	public double getTurnRate() // 11
 	{
 		return this.turnRate;
 	}
 	
-	public double getX()
+	public double getX() // 12
 	{
 		return this.x;
 	}
 	
-	public double getY()
+	public double getY() 
 	{
 		return this.y;
 	}
