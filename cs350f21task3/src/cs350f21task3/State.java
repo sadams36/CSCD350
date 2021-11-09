@@ -23,6 +23,10 @@ public class State {
 		this.speedVertical = speedVertical;
 		this.accelerationHorizontal = accelerationHorizontal;
 		this.turnRate = turnRate;
+		//initialization private class var
+		this.horizontalTarget = speedHorizontal; // check
+		this.headingTarget = heading;            //check
+		this.direction = true;
 	}
 	
 	public double getAccelerationHorizontal() //1
@@ -73,7 +77,7 @@ public class State {
 	// return in  x,y,z,heading,hSpeed, vSpeed
 	public String getStateCSV() // 10 
 	{
-		return this.x + "," + this.y + "," + this.z + " " + this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
+		return this.x + "," + this.y + "," + this.z + "," + this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
 	}
 	
 	public double getTurnRate() // 11
@@ -120,15 +124,20 @@ public class State {
 	                    this.heading += this.turnRate;                      // otherwise add like normal
 
 		         }
-	            else //if(this.headingTarget < this.heading)                  // the heading is larger than the target; target has been exceeded
-	            {
+	            else 
+	            	if(this.headingTarget < this.heading)                  // the heading is larger than the target; target has been exceeded
+	            {	
+	            		this.heading += this.turnRate;
 	                    if(this.heading > 360)                              // the heading is larger than 360 we are going to have to set it back between 0 and 360
 	                    {
 	                        this.heading = this.heading - 360;          // the new heading will be set by subtracting 360. this will give us the left over amount             
+	                        if(this.heading > this.headingTarget)
+	                            this.heading = this.headingTarget;
 	                    }
 	            }
+	           
 	    }// END CLOCKWISE CONDITION
-	        else//turning counter clockwise subtract
+	        else //turning counter clockwise subtract
 	        {
 	            if(this.headingTarget < this.heading)                             // Target < Heading
 	            {
@@ -142,29 +151,34 @@ public class State {
 	                this.heading -= this.turnRate;                           
 	                if(this.heading < 0)                                     // heading has passed 0 and gone negative so we need to reset
 	                {
-	                    this.heading = (this.heading + 360);                          
+	                    this.heading = (this.heading + 360);        
+	                    if( this.headingTarget > this.heading)
+	                        this.heading = this.headingTarget;
 	                }
 	            }		       
 	          }
+		
 //================================================================================================================================================================
 		//HORIZONTAL SPEED LIMITS
-		if(this.speedHorizontal < this.horizontalTarget)//Speeding up
+		if(this.speedHorizontal < this.horizontalTarget)//Gotta speed up
         {
             if(this.speedHorizontal + this.accelerationHorizontal >= this.horizontalTarget) // Check if the speed exceeds the target
                 this.speedHorizontal = this.horizontalTarget;                               // set equal 
             else
                 this.speedHorizontal += this.accelerationHorizontal;
         }
-    else if(this.speedHorizontal > this.horizontalTarget)//Slowing down
+    else if(this.speedHorizontal > this.horizontalTarget)//Goota slow down
         {
                 if(this.speedHorizontal + (this.accelerationHorizontal * -1) <= this.horizontalTarget) // Check if the speed exceeds the target
                     this.speedHorizontal = this.horizontalTarget;									   // set equal 
                 else
                     this.speedHorizontal -= this.accelerationHorizontal;                              // otherwise procees as normal
         }
-		
-	
+// ===============================================================================================================================================================
+		//3D position 
+
 		this.z += this.speedVertical;
+		
 		this.x += Math.sin(Math.toRadians(this.heading)) * this.speedHorizontal; //update last
 		this.y += Math.cos(Math.toRadians(this.heading)) * this.speedHorizontal;
 		

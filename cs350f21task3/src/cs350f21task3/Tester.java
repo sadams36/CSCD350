@@ -13,19 +13,31 @@ public class Tester {
 		System.out.println(air.getID());
 			
 		System.out.println();
-		
-		//from state
+
+//=====================================================================================
+//from state INITIAL STATE CALL
 		System.out.println("From state, INTITAL STATE");
-		System.out.println(state.getStateCSV());
+		System.out.println("headingTarget: " + state.getHeadingTarget());
+		System.out.println("targetDirection: " + state.getHeadingTargetDirection());
+	    System.out.println("speedHorizontalTarget: " + state.getSpeedHorizontalTarget());
+		System.out.println("Printing CSV: "+state.getStateCSV());
 		System.out.println();
-	//	state.setHeadingTarget(90, false);
-	//	state.setSpeedHorizontalTarget​(100);
+//===================================================================================
+//from state UPDATED STATE CALL
+	
 		System.out.println("From state, UPDATED STATE");
+		//state.setHeadingTarget(4, true);
+		//state.setSpeedHorizontalTarget​(5);
+		//state.setSpeedVertical(0);
+		System.out.println("headingTarget " + state.getHeadingTarget());
+		System.out.println("horizontal Target " + state.getSpeedHorizontalTarget());
+		//state.setSpeedHorizontalTarget​(0);
+		//state.setSpeedVertical(0);
 		state.update();
-		System.out.println(state.getStateCSV());
+		System.out.println("Printing CSV: " + state.getStateCSV());
 		
 		
-		
+	
 	}
 
 }
