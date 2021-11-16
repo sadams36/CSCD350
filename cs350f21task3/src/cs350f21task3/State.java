@@ -10,7 +10,7 @@ public class State {
 				   accelerationHorizontal,turnRate;
 	//private variables made in class
 	private double horizontalTarget,headingTarget;
-	private boolean direction;
+	private boolean direction = true; 
 	
 	public State(double x, double y, double z, double heading, double speedHorizontal, 
 			     double speedVertical, double accelerationHorizontal, double turnRate)
@@ -23,6 +23,11 @@ public class State {
 		this.speedVertical = speedVertical;
 		this.accelerationHorizontal = accelerationHorizontal;
 		this.turnRate = turnRate;
+		
+	  // private class variables intialized
+	  //this.direction = true
+		this.headingTarget = heading;
+		this.horizontalTarget = speedHorizontal;
 	}
 	
 	public double getAccelerationHorizontal()
@@ -55,7 +60,7 @@ public class State {
 		return this.horizontalTarget;
 	}
 	
-	public void setSpeedHorizontalTarget​(final double speed)//revise
+	public void setSpeedHorizontalTarget(final double speed)//revise
 	{
 		this.horizontalTarget = speed;
 	}
@@ -73,7 +78,7 @@ public class State {
 	// return in  x,y,z,heading,hSpeed, vSpeed
 	public String getStateCSV() 
 	{
-		return this.x + "," + this.y + "," + this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
+		return this.x + "," + this.y + "," + this.z + "," +  this.heading + "," + this.speedHorizontal + "," + this.speedVertical;
 	}
 	
 	public double getTurnRate()
