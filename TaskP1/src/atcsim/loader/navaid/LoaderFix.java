@@ -24,7 +24,7 @@ public class LoaderFix extends A_Loader{
 		if(scanner == null)
 			throw new IllegalArgumentException("Scanner is null");
 		
-		while(!(scanner.nextLine().isEmpty()))
+		while(scanner.hasNextLine())
 		{
 			System.out.println(scanner.nextLine());//testing line grab for fix
 		}

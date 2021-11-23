@@ -18,4 +18,5 @@ public abstract class A_Loader {
 	//change to protected?
 	public abstract void load(Scanner scanner) throws java.io.IOException;
 		//what do this do?
+	// add methods to read common inputs for a navaid
 }
