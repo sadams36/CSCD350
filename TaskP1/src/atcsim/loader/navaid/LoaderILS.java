@@ -19,5 +19,14 @@ public class LoaderILS extends A_Loader{
 		// TODO Auto-generated method stub
 		
 	}
-
+	private void loadAzimuth(Scanner scanner) {
+		/*
+		 * scans in an Azimuth
+		 */
+	}
+	private void loadBeacon(Scanner scanner) {
+		/*
+		 * scans in a beacon
+		 */
+	}
 }

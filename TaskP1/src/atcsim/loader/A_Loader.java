@@ -11,6 +11,10 @@ public abstract class A_Loader {
 	private OverlayNavigation overlay;
 	public A_Loader(Map<String,A_ComponentNavaid<?>> navaids,OverlayNavigation overlay)
 	{
+		/*
+		 * saves the navaids sent over by NavigationOverlayBuilder
+		 * so that it can be added to? - steven
+		 */
 		this.navaids = navaids;
 		this.overlay = overlay;
 	}
