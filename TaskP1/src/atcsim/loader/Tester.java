@@ -16,7 +16,7 @@ public class Tester {
 		// TODO Auto-generated method stub
 		//testing the build
 		//NavigationOverlayBuilder build = new NavigationOverlayBuilder();
-		OverlayNavigation on = new OverlayNavigation("NAV");
+		OverlayNavigation on = new OverlayNavigation("NAV");//not sure what string is supposed to be passed in - Samuel
 		
 		//reading from a file
 		FileInputStream fis = new FileInputStream(new File("definition1.txt"));
@@ -25,7 +25,7 @@ public class Tester {
 		HashMap<String, A_ComponentNavaid<?>> hm = new HashMap<>();
 		LoaderFix lf = new LoaderFix(hm, on);
 		
-		lf.load(reader);
+		lf.load(reader); //testing what line it grabs - Samuel
 		
 		// Testing a Loader
 			// Step 1: build a Map object (pass it a string and an A_ComponentNavaid<?>, unsure what these are at this point)
