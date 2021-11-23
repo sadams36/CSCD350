@@ -1,5 +1,6 @@
 package atcsim.loader;
 import java.util.Map;
+import java.util.Scanner;
 
 import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.world.navigation.A_ComponentNavaid;
@@ -13,6 +14,7 @@ public abstract class A_Loader {
 		this.navaids = navaids;
 		this.overlay = overlay;
 	}
-	//public abstract void load(java.util.Scanner scanner) throws java.io.IOException {}
+	
+	public abstract void load(Scanner scanner) throws java.io.IOException;
 		//what do this do?
 }
