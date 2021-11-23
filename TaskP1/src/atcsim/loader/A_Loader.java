@@ -2,6 +2,12 @@ package atcsim.loader;
 import java.util.Map;
 import java.util.Scanner;
 
+import atcsim.datatype.Altitude;
+import atcsim.datatype.CoordinateWorld3D;
+import atcsim.datatype.Latitude;
+import atcsim.datatype.Longitude;
+import atcsim.datatype.UHFFrequency;
+import atcsim.datatype.VHFFrequency;
 import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.world.navigation.A_ComponentNavaid;
 
@@ -27,17 +33,62 @@ public abstract class A_Loader {
 	{
 		//load the next portion of text as an ID
 	}
-	protected void loadPosition(Scanner scanner) //not sure if this needs to be void or a different return type - Steven
+	protected CoordinateWorld3D loadPosition(Scanner scanner)
 	{
-		//load the next portion of text as a position
+		/*
+		 * load the next portion of text as a position
+		 * 
+		 * they *DO* have to be in this order
+		 */
+		
+		Latitude lat = loadLatitude(scanner);
+		Longitude lon = loadLongitude(scanner);
+		Altitude alt = loadAltitude(scanner);
+		
+		return new CoordinateWorld3D(lat,lon,alt);
 	}
-	protected void loadUHF_Frequency(Scanner scanner) //not sure if this needs to be void or a different return type - Steven
+	protected Latitude loadLatitude(Scanner scanner) 
+	{
+		//store variables for clarity
+		int degrees;
+		int minutes;
+		double seconds;
+		
+		//load latitude
+		degrees = scanner.nextInt();
+		minutes = scanner.nextInt();
+		seconds = scanner.nextDouble();
+		return new Latitude(degrees,minutes,seconds);
+	}
+	protected Longitude loadLongitude(Scanner scanner) 
+	{
+		//store variables for clarity
+		int degrees;
+		int minutes;
+		double seconds;
+		
+		//load longitude
+		degrees = scanner.nextInt();
+		minutes = scanner.nextInt();
+		seconds = scanner.nextDouble();
+		
+		return new Longitude(degrees,minutes,seconds);
+	}
+	protected Altitude loadAltitude(Scanner scanner)//this probably doesnt need its own method but i like having it consistent - Steven
+	{
+		//get the next double, assuming it's altitude
+		return new Altitude(scanner.nextDouble());
+	}
+	
+	protected UHFFrequency loadUHF_Frequency(Scanner scanner) 
 	{
 		//load the next portion of text as a uhf_frequency
+		return null;//TODO
 	}
-	protected void loadVHF_Frequency(Scanner scanner) //not sure if this needs to be void or a different return type - Steven
+	protected VHFFrequency loadVHF_Frequency(Scanner scanner) 
 	{
 		//load the next portion of text as a vhf_frequency
+		return null;//TODO
 	}
 	
 }
