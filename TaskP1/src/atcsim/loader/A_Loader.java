@@ -17,5 +17,23 @@ public abstract class A_Loader {
 	
 	//change to protected?
 	public abstract void load(Scanner scanner) throws java.io.IOException;
-		//what do this do?
+		//what should this do?
+	
+	protected void loadID(Scanner scanner) //not sure if this needs to be void or a String return type - Steven
+	{
+		//load the next portion of text as an ID
+	}
+	protected void loadPosition(Scanner scanner) //not sure if this needs to be void or a different return type - Steven
+	{
+		//load the next portion of text as a position
+	}
+	protected void loadUHF_Frequency(Scanner scanner) //not sure if this needs to be void or a different return type - Steven
+	{
+		//load the next portion of text as a uhf_frequency
+	}
+	protected void loadVHF_Frequency(Scanner scanner) //not sure if this needs to be void or a different return type - Steven
+	{
+		//load the next portion of text as a vhf_frequency
+	}
+	
 }
