@@ -9,7 +9,7 @@ public class LoaderAirway extends A_Loader{
 
 	public LoaderAirway(Map<String, A_ComponentNavaid<?>> navaids, OverlayNavigation overlay) {
 		/*
-		 * saves the navaids sent over by NavigationOverlayBuilder
+		 * saves the navaids sent over by NavigationOverlayBuilder to send stuff to
 		 */
 		
 		super(navaids, overlay);
