@@ -13,11 +13,21 @@ public class LoaderFix extends A_Loader{
 		super(navaids, overlay);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	/*
+	 * fix1, 48,38,31, 116,24,29, 1949
+	 * ID  , position or (longitude,latitude,altitude)
+	 */
 	@Override
 	public void load(Scanner scanner) throws IOException {
 		// TODO Auto-generated method stub
+		if(scanner == null)
+			throw new IllegalArgumentException("Scanner is null");
 		
+		while(!(scanner.nextLine().isEmpty()))
+		{
+			System.out.println(scanner.nextLine());//testing line grab for fix
+		}
 	}
 
 }

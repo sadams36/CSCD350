@@ -21,5 +21,6 @@ public class LoaderAirway extends A_Loader{
 		/*
 		 * uses the given scanner to load variables into this loader's navaids map.
 		 */
+		
 	}
 }

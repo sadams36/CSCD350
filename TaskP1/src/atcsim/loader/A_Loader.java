@@ -15,6 +15,7 @@ public abstract class A_Loader {
 		this.overlay = overlay;
 	}
 	
+	//change to protected?
 	public abstract void load(Scanner scanner) throws java.io.IOException;
 		//what do this do?
 }
