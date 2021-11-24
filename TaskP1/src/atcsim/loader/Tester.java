@@ -10,6 +10,7 @@ import java.util.Map;
 import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.loader.navaid.LoaderFix;
 import atcsim.loader.navaid.LoaderNDB;
+import atcsim.loader.navaid.LoaderVOR;
 import atcsim.world.navigation.A_ComponentNavaid;
 
 public class Tester {
@@ -32,6 +33,9 @@ public class Tester {
 		
 		LoaderNDB ndb = new LoaderNDB(hm,on);
 		ndb.load(reader);
+		
+		LoaderVOR vor = new LoaderVOR(hm,on);
+		vor.load(reader);
 		
 		for(Map.Entry<String, A_ComponentNavaid<?>> entry : hm.entrySet()) {
 			System.out.println(entry.getKey()+ ":" + entry.getValue());
