@@ -58,14 +58,19 @@ public class LoaderFix extends A_Loader{
 	            String altSplit = split[3];
 	            System.out.println(altSplit);
 	            Altitude altitude = new Altitude(Double.parseDouble(altSplit));
-
+	            
+	            //ComponentNavaidFix requires a CoordinateWorld3D object
+	            //ComponentNavaidFix makes a 
 	            CoordinateWorld3D coordinate = new CoordinateWorld3D(latitude,longitude,altitude);
 	            ComponentNavaidFix fix = new ComponentNavaidFix(id,coordinate); 
 	            
 	            this.navaids.put(split[0].trim(), fix);
 	            
+	            //checks if there is another line to be read
 	            lineToRead = scanner.nextLine();
-	            		
+	            	
+	            //conditions needed to stop reading the file 
+	            // if the nextline is blank or it is empty indicating the end of a file
 	            if(lineToRead.isBlank() || lineToRead.isEmpty())
 	            		load = false;
 	            
