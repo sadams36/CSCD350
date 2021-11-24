@@ -67,6 +67,8 @@ public class LoaderAirway extends A_Loader{
 		default:
 			throw new IllegalArgumentException("Error scanning in Airway");
 		}
+		
+		navaids.put(id, airway);
 	}
 	private String loadAirwayType(Scanner scanner) {
 		/*
