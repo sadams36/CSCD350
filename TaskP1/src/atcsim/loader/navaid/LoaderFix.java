@@ -35,10 +35,11 @@ public class LoaderFix extends A_Loader{
 			//this split will have 4 sections that are based off of " ," in a line
 			String[] split = lineToRead.split(", ");
 			System.out.println(split[0]);
-			//make latitiude object
+			
 						
 			String[] longSplit = split[1].split(",");
 			System.out.println(longSplit[0] + " " +longSplit[1]+ " " +longSplit[2]);
+			//make latitiude object
 			
 			String[] latSplit = split[2].split(",");
 			System.out.println(latSplit[0] + " " +latSplit[1]+ " " +latSplit[2]);
