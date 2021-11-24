@@ -40,27 +40,27 @@ public class LoaderFix extends A_Loader{
 	            String[] split = lineToRead.split(", ");
 	            
 	            String id = split[0];
-	            System.out.println(id);
+	            //System.out.println(id);
 	            
 	            //used to make a latitude object
 	            String[] latSplit = split[1].split(",");
-	            System.out.println(latSplit[0] + " " +latSplit[1]+ " " +latSplit[2]);
+	           // System.out.println(latSplit[0] + " " +latSplit[1]+ " " +latSplit[2]);
 	            Latitude latitude = new Latitude(Integer.parseInt(latSplit[0]),Integer.parseInt(latSplit[1]),Double.parseDouble(latSplit[2])); 
 	            
 	            //used to make longitude object
 	            String[] longSplit = split[2].split(",");
-	            System.out.println(longSplit[0] + " " +longSplit[1]+ " " +longSplit[2]);
+	         //  System.out.println(longSplit[0] + " " +longSplit[1]+ " " +longSplit[2]);
 	            Longitude longitude = new Longitude(Integer.parseInt(longSplit[0]),Integer.parseInt(longSplit[1]),Double.parseDouble(longSplit[2]));
 	            
 	          
 	            //since altitude only has one element in that array we just assign
 	            //used to make altitude object
 	            String altSplit = split[3];
-	            System.out.println(altSplit);
+	          //  System.out.println(altSplit);
 	            Altitude altitude = new Altitude(Double.parseDouble(altSplit));
 	            
 	            //ComponentNavaidFix requires a CoordinateWorld3D object
-	            //ComponentNavaidFix makes a 
+	            //ComponentNavaidFix makes a navaid
 	            CoordinateWorld3D coordinate = new CoordinateWorld3D(latitude,longitude,altitude);
 	            ComponentNavaidFix fix = new ComponentNavaidFix(id,coordinate); 
 	            

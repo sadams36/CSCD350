@@ -9,6 +9,7 @@ import java.util.Map;
 
 import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.loader.navaid.LoaderFix;
+import atcsim.loader.navaid.LoaderNDB;
 import atcsim.world.navigation.A_ComponentNavaid;
 
 public class Tester {
@@ -24,14 +25,14 @@ public class Tester {
 		Scanner reader = new Scanner(fis);
 		//Navaids will be stored in this hashmap
 		HashMap<String, A_ComponentNavaid<?>> hm = new HashMap<>();
-		LoaderFix lf = new LoaderFix(hm, on);
 		
+		LoaderFix lf = new LoaderFix(hm, on);
 		lf.load(reader); //testing what line it grabs - Samuel
-		/*
-		for (HashMap.Entry<String, A_ComponentNavaid<?>> entry : map.entrySet()) {
-		    System.out.println(entry.getKey()+" : "+entry.getValue());
-		}
-		*/
+		
+		
+		LoaderNDB ndb = new LoaderNDB(hm,on);
+		ndb.load(reader);
+		
 		for(Map.Entry<String, A_ComponentNavaid<?>> entry : hm.entrySet()) {
 			System.out.println(entry.getKey()+ ":" + entry.getValue());
 		}
