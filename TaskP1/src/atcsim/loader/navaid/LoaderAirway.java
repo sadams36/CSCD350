@@ -76,7 +76,10 @@ public class LoaderAirway extends A_Loader{
 		 * scan what type of airway this will be from the file
 		 */
 		//scan until next comma like loadID
+
 		//scanner.delimiter(",");
+
+		scanner.useDelimiter(",");
 		return scanner.next(); 
 	}
 }
