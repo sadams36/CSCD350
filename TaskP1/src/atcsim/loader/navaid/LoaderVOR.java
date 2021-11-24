@@ -78,7 +78,7 @@ public class LoaderVOR extends A_Loader{
         // if the nextline is blank or it is empty indicating the end of a file
         if(lineToRead.isBlank() || lineToRead.isEmpty())
         		load = false;
-		}
+		}//
 	}
 
 }
