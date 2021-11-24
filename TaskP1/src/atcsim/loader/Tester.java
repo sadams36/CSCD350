@@ -16,6 +16,9 @@ import atcsim.world.navigation.A_ComponentNavaid;
 public class Tester {
 
 	public static void main(String[] args) throws IOException {
+		NavigationOverlayBuilder build = new NavigationOverlayBuilder();
+		build.loadDefinition​("definition1.txt");
+		/*
 		// TODO Auto-generated method stub
 		//testing the build
 		//NavigationOverlayBuilder build = new NavigationOverlayBuilder();
@@ -45,6 +48,7 @@ public class Tester {
 			// Step 2: build an OverlayNavigation object, pass it a string (the string represents an ID))
 			// Step 3: pass the above two objects into the appropriate loader constructor
 			// Step 4: print the new loader (assuming there's some sort of automatic toString)
+	*/
 	}
 
 }

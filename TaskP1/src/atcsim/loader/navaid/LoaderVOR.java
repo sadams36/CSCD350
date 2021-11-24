@@ -36,9 +36,7 @@ public class LoaderVOR extends A_Loader{
 		
 		scanner.nextLine();
 		String lineToRead = scanner.nextLine();
-		
-		
-        
+	
 		while(load) 
 		{
 		String[] split = lineToRead.split(", ");
