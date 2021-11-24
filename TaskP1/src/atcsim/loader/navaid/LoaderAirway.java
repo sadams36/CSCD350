@@ -70,11 +70,13 @@ public class LoaderAirway extends A_Loader{
 		
 		navaids.put(id, airway);
 	}
+	
 	private String loadAirwayType(Scanner scanner) {
 		/*
 		 * scan what type of airway this will be from the file
 		 */
 		//scan until next comma like loadID
-		return null; //TODO
+		scanner.delimiter(",");
+		return scanner.next(); 
 	}
 }
