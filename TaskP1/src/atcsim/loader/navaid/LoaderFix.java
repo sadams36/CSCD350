@@ -23,11 +23,29 @@ public class LoaderFix extends A_Loader{
 		// TODO Auto-generated method stub
 		if(scanner == null)
 			throw new IllegalArgumentException("Scanner is null");
+		//load will be used to move down the file
+		boolean load = true;
 		
-		while(scanner.hasNextLine())
+		scanner.nextLine(); // reads the header which we dont need
+		String lineToRead = scanner.nextLine(); // reads the first line. Will be used to determine 
+												// if the file has reached the end or has a blank line
+		
+		while(load)
 		{
-			System.out.println(scanner.nextLine());//testing line grab for fix
+			//this split will have 4 sections that are based off of " ," in a line
+			String[] split = lineToRead.split(", ");
+			System.out.println(split[0]);
+						
+			String[] longSplit = split[1].split(",");
+			System.out.println(longSplit[0] + " " +longSplit[1]+ " " +longSplit[2]);
+			
+			String[] latSplit = split[2].split(",");
+			System.out.println(latSplit[0] + " " +latSplit[1]+ " " +latSplit[2]);
+			//since altitude only has one element in that array we just assign
+			String altSplit = split[3];
+			System.out.println(altSplit);
 		}
+		
 	}
 
 }
