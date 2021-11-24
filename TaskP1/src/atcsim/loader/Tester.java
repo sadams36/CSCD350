@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Map;
 
 import atcsim.graphics.view.navigation.OverlayNavigation;
 import atcsim.loader.navaid.LoaderFix;
@@ -26,7 +27,14 @@ public class Tester {
 		LoaderFix lf = new LoaderFix(hm, on);
 		
 		lf.load(reader); //testing what line it grabs - Samuel
-		
+		/*
+		for (HashMap.Entry<String, A_ComponentNavaid<?>> entry : map.entrySet()) {
+		    System.out.println(entry.getKey()+" : "+entry.getValue());
+		}
+		*/
+		for(Map.Entry<String, A_ComponentNavaid<?>> entry : hm.entrySet()) {
+			System.out.println(entry.getKey()+ ":" + entry.getValue());
+		}
 		// Testing a Loader
 			// Step 1: build a Map object (pass it a string and an A_ComponentNavaid<?>, unsure what these are at this point)
 			// Step 2: build an OverlayNavigation object, pass it a string (the string represents an ID))
