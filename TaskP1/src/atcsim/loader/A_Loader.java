@@ -13,8 +13,8 @@ import atcsim.world.navigation.A_ComponentNavaid;
 
 //template for the other loaders
 public abstract class A_Loader {
-	private Map<String,A_ComponentNavaid<?>> navaids;//?
-	private OverlayNavigation overlay;
+	protected Map<String,A_ComponentNavaid<?>> navaids;//?
+	protected OverlayNavigation overlay;
 	public A_Loader(Map<String,A_ComponentNavaid<?>> navaids,OverlayNavigation overlay)
 	{
 		/*
@@ -27,15 +27,13 @@ public abstract class A_Loader {
 	
 	//change to protected?
 	public abstract void load(Scanner scanner) throws java.io.IOException;
-
-		//what do this do?
-	// add methods to read common inputs for a navaid
-
 		//what should this do?
 	
-	protected void loadID(Scanner scanner) //not sure if this needs to be void or a String return type - Steven
+	protected String loadID(Scanner scanner) //not sure if this needs to be void or a String return type - Steven
 	{
 		//load the next portion of text as an ID
+		//read until the next comma
+		return null; //TODO
 	}
 	protected CoordinateWorld3D loadPosition(Scanner scanner)
 	{
