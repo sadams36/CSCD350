@@ -7,7 +7,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 import atcsim.graphics.view.navigation.OverlayNavigation;
+import atcsim.loader.navaid.LoaderAirway;
 import atcsim.loader.navaid.LoaderFix;
+import atcsim.loader.navaid.LoaderILS;
 import atcsim.loader.navaid.LoaderNDB;
 import atcsim.loader.navaid.LoaderVOR;
 import atcsim.world.navigation.A_ComponentNavaid;
@@ -39,6 +41,14 @@ public class NavigationOverlayBuilder {
 		
 		LoaderVOR vor = new LoaderVOR(hm,on);
 		vor.load(reader);
+		
+		/* Code makes the program crash
+		LoaderILS ils = new LoaderILS(hm,on);
+		ils.load(reader);
+		
+		LoaderAirway air = new LoaderAirway(hm,on);
+		air.load(reader);
+		*/
 		
 		for(Map.Entry<String, A_ComponentNavaid<?>> entry : hm.entrySet()) {
 			System.out.println(entry.getKey()+ ":" + entry.getValue());
