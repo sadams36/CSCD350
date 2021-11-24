@@ -35,6 +35,7 @@ public class LoaderFix extends A_Loader{
 			//this split will have 4 sections that are based off of " ," in a line
 			String[] split = lineToRead.split(", ");
 			System.out.println(split[0]);
+			//make latitiude object
 						
 			String[] longSplit = split[1].split(",");
 			System.out.println(longSplit[0] + " " +longSplit[1]+ " " +longSplit[2]);
@@ -44,6 +45,7 @@ public class LoaderFix extends A_Loader{
 			//since altitude only has one element in that array we just assign
 			String altSplit = split[3];
 			System.out.println(altSplit);
+			
 		}
 		
 	}
