@@ -62,7 +62,7 @@ public class LoaderFix extends A_Loader{
 	            Altitude altitude = new Altitude(Double.parseDouble(altSplit));
 	            
 	            //ComponentNavaidFix requires a CoordinateWorld3D object
-	            //ComponentNavaidFix makes a navaid
+	            //ComponentNavaidFix makes a navaid.
 	            CoordinateWorld3D coordinate = new CoordinateWorld3D(latitude,longitude,altitude);
 	            ComponentNavaidFix fix = new ComponentNavaidFix(id,coordinate); 
 	            
