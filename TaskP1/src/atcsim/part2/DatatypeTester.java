@@ -4,7 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import atcsim.datatype.Altitude;
+import atcsim.datatype.*;
+
 
 //API https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html
 
@@ -64,7 +65,30 @@ class DatatypeTester {
 	
 	@Test
 	public void testAttitudePitch() {
-		fail("Not yet implemented");
+		// fail("Not yet implemented");
+		
+		// Create pitch (p = 10)
+		AttitudePitch p = new AttitudePitch(10); 
+		
+		// Verify (0 + p) is correct
+		AttitudePitch zero = new AttitudePitch(0);
+		AttitudePitch sum1 = p.add_(zero); 
+		double sum1Result = sum1.getValue_();
+		assertEquals(10, sum1Result,"from result");
+		
+		// Verify (90 + p) is correct
+		AttitudePitch ninety = new AttitudePitch(90);
+		AttitudePitch sum2 = p.add_(ninety); 
+		double sum2Result = sum2.getValue_();
+		assertEquals(100, sum2Result,"from result");
+		
+		
+		// Verify (175 + p) is correct
+		AttitudePitch oneSeventyFive = new AttitudePitch(175);
+		AttitudePitch sum3 = p.add_(oneSeventyFive); 
+		double sum3Result = sum3.getValue_();
+		assertEquals(-175, sum3Result,"from result");
+		
 	}
 	
 	@Test
