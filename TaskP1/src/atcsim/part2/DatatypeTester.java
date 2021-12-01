@@ -4,9 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import atcsim.datatype.Altitude;
-import atcsim.datatype.AngleNavigational;
-import atcsim.datatype.Scaler;
+import atcsim.datatype.*;
 
 //API https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html
 
