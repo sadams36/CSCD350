@@ -67,12 +67,19 @@ public class LoaderAirway extends A_Loader{
 		default:
 			throw new IllegalArgumentException("Error scanning in Airway");
 		}
+		
+		navaids.put(id, airway);
 	}
+	
 	private String loadAirwayType(Scanner scanner) {
 		/*
 		 * scan what type of airway this will be from the file
 		 */
 		//scan until next comma like loadID
-		return null; //TODO
+
+		//scanner.delimiter(",");
+
+		scanner.useDelimiter(",");
+		return scanner.next(); 
 	}
 }
