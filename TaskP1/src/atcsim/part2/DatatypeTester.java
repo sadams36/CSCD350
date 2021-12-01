@@ -38,12 +38,21 @@ class DatatypeTester {
 		double subResult2 = sub2.getValue_();
 		assertEquals(-800, subResult2);
 		
-		//alt = alt2
+		//alt = alt or 1000 == 1000
+		int res = testAlt.compareTo(testAlt);
+		assertEquals(0,res);
 		
-		// alt < alt2
+		// alt < alt2  or 1000 < 200
+		//   returns 1
+		//needs a check
+		int res2 = testAlt.compareTo(testAlt2);
+		assertEquals(1,res2);
 		
-		// alt2 > alt
-		
+		// alt2 > alt or 200 > 1000
+		//returns -1
+		//needs a check
+		int res3 = testAlt2.compareTo(testAlt);
+		assertEquals(-1,res3);
 		
 		
 	}
