@@ -18,13 +18,32 @@ class DatatypeTester {
 		
 		//assertEquals(Expected Result(We set this),Actual Result(The result that is calculated))
 		
-		//alt1 + alt2
-		double result = testAlt.getValue_() + testAlt2.getValue_();
-		assertEquals(1200, result,"from result");
+		//alt + alt2
+		Altitude add = testAlt.add_(testAlt2);
+		double addResult = add.getValue_();
+		assertEquals(1200, addResult,"from result");
 		
-		//alt2 + alt1
-		double result2 = testAlt2.getValue_() + testAlt.getValue_();
-		assertEquals(1200, result2,"from result");
+		//alt2 + alt
+		Altitude add2 = testAlt2.add_(testAlt);
+		double addResult2 = add2.getValue_();
+		assertEquals(1200, addResult2,"from result");
+		
+		//alt - alt2
+		Altitude sub = testAlt.subtract_(testAlt2);
+		double subResult = sub.getValue_();
+		assertEquals(800, subResult);
+		
+		//alt2 - alt
+		Altitude sub2 = testAlt2.subtract_(testAlt);
+		double subResult2 = sub2.getValue_();
+		assertEquals(-800, subResult2);
+		
+		//alt = alt2
+		
+		// alt < alt2
+		
+		// alt2 > alt
+		
 		
 		
 	}
