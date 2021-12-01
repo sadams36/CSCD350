@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import atcsim.datatype.Altitude;
+import atcsim.datatype.AngleNavigational;
+import atcsim.datatype.Scaler;
 
 //API https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html
 
@@ -59,7 +61,28 @@ class DatatypeTester {
 	
 	@Test
 	public void testAngleNavigational() {
-		fail("Not yet implemented");
+		AngleNavigational testAngleNav1 = new AngleNavigational(90);
+		AngleNavigational testAngleNav2 = new AngleNavigational(180);
+		
+		//assertEquals(Expected Result(We set this),Actual Result(The result that is calculated))
+		
+		//testAngleNav1 reciprocal
+		AngleNavigational recipResult1 = testAngleNav1.reciprocate();
+		assertEquals(270.0, recipResult1.getValue_(),"from result");
+		
+		//testAngleNav2 reciprocal
+		AngleNavigational recipResult2 = testAngleNav2.reciprocate();
+		assertEquals(0.0, recipResult2.getValue_(),"from result");
+		
+		
+		//testAngleNav1 interpolate
+		AngleNavigational interpResult1 = testAngleNav1.interpolate(testAngleNav2,Scaler.HALF);
+		assertEquals(135, interpResult1.getValue_(),"from result");
+		
+		//testAngleNav2 interpolate
+		AngleNavigational interpResult2 = testAngleNav2.interpolate(testAngleNav1,Scaler.HALF);
+		assertEquals(315, interpResult2.getValue_(),"from result");
+		
 	}
 	
 	@Test
